@@ -9,14 +9,20 @@ var time = 30;
 var questionsArr = [
     {
         question: "What does JS stand for?",
-        choices: ["Jelly", "Cats", "Pigs", "Horses"],
-        answer: "Dogs"
+        choices: ["JellyShoes", "JakeSully", "JavaScript"],
+        answer: "JavaScript"
     },
     {
-        question: "Dogs or cats",
-        choices: ["Dogs", "Cats", "Pigs", "Horses"],
-        answer: "Dogs"
-    }
+        question: "What are the data-types used in JavaScript?",
+        choices: ["English", "Objects", "Pigs", "Sheeps"],
+        answer: "Objects"
+    },
+    {
+        question: "Is JS a case-sensitive language?",
+        choices: ["Yes", "Maybe", "No"],
+        answer: "Yes"
+    },
+    
 ]
 
 function startQuiz () {
