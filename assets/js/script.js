@@ -1,10 +1,13 @@
 var startScreen = document.getElementById('start-screen')
 var startButton = document.getElementById('start')
 var questions = document.getElementById('questions')
+var questionTitle = document.getElementById('question-title');
+var choices = document.getElementById('choices')
 var endScreen = document.getElementById('end-screen')
 var timerEl = document.getElementById('time')
 var timerInterval;
 var time = 30;
+var questionIndex = 0;
 
 var questionsArr = [
     {
@@ -54,8 +57,49 @@ function startQuiz () {
 
     }, 1000)
 
+    // set a counter here (let index = 0)
+    let index = 0;
+
+getQuestion() 
+
+    // then a foreach loop on our questions
+    // which will populate the html with the questions
+    // right now the questions div is empty
+
 
 }
+
+function getQuestion() {
+    var currentQuestion = questionsArr[questionIndex]
+    questionTitle.value = currentQuestion.question
+
+    // we need to create a button inside our choices div
+    // then populate the button with the answers
+    // on click of the button will increment our questionIndex
+    // clear out the questions div
+    // and repopulate that div with the next question
+
+    currentQuestion.choices.forEach(answer => {
+        let answerEl = document.createElement("button")
+        answerEl.value = answer
+        answerEl.addEventListener('click', function() {
+            if (answerEl.value === answer.answer) {
+                questionIndex++
+                // remove the values from questionTitle and choices
+                // then getQusestion again
+                // since we incremented questionIndex, it should move on to the next q
+            } else {
+                // take like 5 seconds off of the time
+
+                // the endquiz function will save our scores to localState
+            }
+            // this is going to be where loop continues
+        })
+        choices.appendChild(answerEl)
+
+    });
+}
+
 
 // End Quiz
 function endQuiz () {
