@@ -9,9 +9,6 @@ var clearButton = document.getElementById('clear')
 
 
 
-
-// Can you start off our loop? yes ma'am
-
 // To Do:
 
 // Loop through leaderboard array
